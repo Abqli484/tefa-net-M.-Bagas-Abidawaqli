@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "12389f48-558c-496d-8c17-04d55c39bae1",
+		"name": "ToDoList",
+		"description": "## 📖 Deskripsi\n\nProyek ini adalah aplikasi **Todo List** berbasis **.NET** yang menyediakan API untuk mengelola daftar tugas (CRUD). Selain itu, proyek ini juga memiliki antarmuka pengguna berbasis **HTML, CSS, dan jQuery**, yang memungkinkan pengguna berinteraksi langsung dengan sistem melalui tampilan web.  \n\n## ⚙️ Cara Setup\n\n### 1 **Clone Repository**\n\n```\ngit clone https://github.com/username/repository-name.git\n\n ```\n\n### 2 **Buka di Visual Studio**\n\n- Buka **Visual Studio**\n    \n- Pilih **Open a Project or Solution**, lalu arahkan ke folder proyek\n    \n\n### 3 **Atur Database (MySQL/SQL Server)**\n\n- Pastikan MySQL/SQL Server sudah terinstal\n    \n- Sesuaikan **connection string** di `appsettings.json`\n    \n\n### 4 **Jalankan Migrasi Database**\n\n```\ndotnet ef database update\n\n ```\n\n### 5 **Jalankan Aplikasi**\n\n- Klik tombol **Run** di Visual Studio atau jalankan perintah:\n    \n\n```\ndotnet run\n\n ```\n\n## 🚀Cara Menggunakan\n\n### 🔹 **Menggunakan API (Postman / HTTP Client)**\n\n1. **Buka Postman** dan import dokumentasi API yang tersedia\n    \n2. API endpoint akan otomatis tersedia di dokumentasi Postman\n    \n\n### 🔹 **Menggunakan UI (Web Browser)**\n\n1. Setelah program dijalankan, buka browser dan akses\n    \n\n```\nhttp://localhost:port/index.html\n\n\n ```\n\nDari halaman ini, Anda bisa menambah, mengedit, melihat, dan menghapus daftar tugas dengan mudah.\n\n## 📂 Struktur File\n\n```\n📦 TodoList\n ┣ 📂 Controllers        # Berisi API Controller (CRUD)\n ┣ 📂 Models            # Model data untuk database\n ┣ 📂 wwwroot           # Berisi tampilan UI dan aset statis\n ┃ ┣ 📂 views          # Halaman UI (index.html)\n ┃ ┣ 📂 css            # File CSS untuk styling\n ┃ ┣ 📂 js             # File JavaScript untuk logika frontend\n ┣ 📜 appsettings.json  # Konfigurasi database & aplikasi\n ┣ 📜 Program.cs        # Entry point aplikasi\n ┗ 📜 README.md         # Dokumentasi proyek\n\n\n ```\n\n## 📝 Catatan\n\n- Pastikan koneksi database sesuai dengan environment yang digunakan\n    \n- Jika terjadi error, periksa kembali konfigurasi `appsettings.json`\n    \n- Dokumentasi API dapat langsung diakses melalui **Postman** setelah melakukan import",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42852439"
+	},
+	"item": [
+		{
+			"name": "Add List",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"judul\": \"Tambahkan judul kegiatan\",\r\n\"deskripsi\": \"Tambahkan Deskripsi Baru\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7229/api/lists",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7229",
+					"path": [
+						"api",
+						"lists"
+					]
+				},
+				"description": "Endpoint ini digunakan untuk menambahkan data baru ke dalam daftar. Data yang dikirimkan dalam **body request** harus berupa JSON yang berisi **judul** dan **deskripsi**.\n\n**Catatan**:\n\n- Pastikan **judul** dan **deskripsi** tidak kosong agar tidak terjadi error validasi.\n    \n- Jika berhasil, API akan merespons dengan **201 Created** beserta data yang telah ditambahkan.\n    \n- Jika terjadi kesalahan dalam format data, API bisa merespons **400 Bad Request**."
+			},
+			"response": []
+		},
+		{
+			"name": "Data List",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7229/api/lists",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7229",
+					"path": [
+						"api",
+						"lists"
+					]
+				},
+				"description": "**Deskripsi**:  \nEndpoint ini digunakan untuk mengambil daftar seluruh data dalam sistem. Respon yang diterima berupa array JSON yang berisi **id**, **judul**, dan **deskripsi** dari setiap item dalam daftar.\n\n**Catatan:**\n\n- Pastikan server berjalan pada port yang sesuai (7299 dalam contoh ini).\n    \n- Jika data kosong, response bisa berupa array kosong `[]`.\n    \n- Jika API tidak merespons atau terjadi error **404 Not Found**, periksa apakah endpoint sudah benar."
+			},
+			"response": []
+		},
+		{
+			"name": "Update Task",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"judul\": \"Ubah judul sebelumnya\",\r\n  \"deskripsi\": \"Ubah deskripsi sebelumnya\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7229/api/lists/{id}",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7229",
+					"path": [
+						"api",
+						"lists",
+						"{id}"
+					]
+				},
+				"description": "**Deskripsi**:  \nEndpoint ini digunakan untuk memperbarui data dalam daftar berdasarkan **id** yang diberikan. Data yang dikirimkan dalam **body request** harus berupa JSON yang berisi **judul** dan **deskripsi** yang diperbarui.\n\n**Catatan**:\n\n- Pastikan server berjalan pada port yang sesuai (7299 dalam contoh ini).\n    \n- Pastikan ID yang dikirim sudah benar dan data terkait memang ada dalam database. Jika tidak, API bisa merespons **404 Not Found**."
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Task",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7229/api/lists/{id}",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7229",
+					"path": [
+						"api",
+						"lists",
+						"{id}"
+					]
+				},
+				"description": "**Deskripsi:**  \nMenghapus data list berdasarkan `id`. Jika data ditemukan, maka akan dihapus dari database.\n\n**Catatan:**\n\n- **Pastikan** **`id`** **valid** sebelum mengirim request untuk menghindari error.\n    \n- Penghapusan bersifat **permanen**, jadi pastikan data yang dihapus benar-benar tidak diperlukan sebelum mengirim request.\n    \n- Respons yang dikembalikan adalah 204 No Content"
+			},
+			"response": []
+		}
+	]
+}
