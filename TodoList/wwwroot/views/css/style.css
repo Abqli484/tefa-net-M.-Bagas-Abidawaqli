@@ -1,3 +1,4 @@
+/* Import Font */
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #f4f4f4;
@@ -9,6 +10,7 @@ body {
     padding: 20px;
 }
 
+/* Container */
 .container {
     background: #ffffff;
     padding: 20px;
@@ -19,11 +21,13 @@ body {
     text-align: center;
 }
 
+/* Judul */
 h1 {
     color: #333;
     margin-bottom: 20px;
 }
 
+/* Form */
 .todo-form {
     display: flex;
     flex-direction: column;
@@ -43,6 +47,7 @@ h1 {
         width: 100%;
     }
 
+/* Tombol */
 .btn-primary, .btn-secondary {
     padding: 10px 20px;
     border: none;
@@ -70,6 +75,7 @@ h1 {
     background-color: #c82333;
 }
 
+/* Tabel */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -96,6 +102,7 @@ td {
     background-color: #f9f9f9;
 }
 
+/* Tombol dalam tabel */
 table button {
     padding: 5px 10px;
     border: none;

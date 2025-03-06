@@ -1,13 +1,13 @@
-﻿const apiUrl = "https://localhost:7229/api/lists"; 
+﻿const apiUrl = "https://localhost:7229/api/lists"; // Ganti dengan URL API-mu
 
-
+// Ambil data dari API dan tampilkan di tabel
 function fetchLists() {
     $.ajax({
         url: apiUrl,
         type: "GET",
         success: function (data) {
-            console.log("Data yang diterima:", data); 
-            $("#listTable").empty(); 
+            console.log("Data yang diterima:", data); // Debugging
+            $("#listTable").empty(); // Kosongkan tabel sebelum mengisi ulang
             data.forEach(item => {
                 $("#listTable").append(`
                     <tr>
@@ -28,7 +28,7 @@ function fetchLists() {
     });
 }
 
-
+// Tambah atau Update data
 $("#addForm").submit(function (e) {
     e.preventDefault();
     const id = $("#todoId").val();
@@ -38,7 +38,7 @@ $("#addForm").submit(function (e) {
     };
 
     if (id) {
-        
+        // Jika ID ada, lakukan update
         $.ajax({
             url: `${apiUrl}/${id}`,
             type: "PUT",
@@ -54,7 +54,7 @@ $("#addForm").submit(function (e) {
             }
         });
     } else {
-        
+        // Jika tidak ada ID, lakukan penambahan data baru
         $.ajax({
             url: apiUrl,
             type: "POST",
@@ -72,7 +72,7 @@ $("#addForm").submit(function (e) {
     }
 });
 
-
+// Hapus data
 function deleteList(id) {
     if (confirm("Apakah Anda yakin ingin menghapus data ini?")) {
         $.ajax({
@@ -89,7 +89,7 @@ function deleteList(id) {
     }
 }
 
-
+// Edit data (Menampilkan data di form untuk update)
 function editList(id, judul, deskripsi) {
     $("#todoId").val(id);
     $("#judul").val(judul);
@@ -97,7 +97,7 @@ function editList(id, judul, deskripsi) {
     $("#cancelEdit").show();
 }
 
-
+// Reset form setelah submit
 function resetForm() {
     $("#todoId").val("");
     $("#judul").val("");
@@ -105,8 +105,8 @@ function resetForm() {
     $("#cancelEdit").hide();
 }
 
-
+// Tombol batal edit
 $("#cancelEdit").click(resetForm);
 
-
+// Load data saat halaman pertama kali dibuka
 $(document).ready(fetchLists);
