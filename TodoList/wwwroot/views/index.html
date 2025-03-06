@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>📝 Todo List</h1>
+        <form id="addForm" class="todo-form">
+            <input type="hidden" id="todoId">
+            <input type="text" id="judul" placeholder="Masukkan judul..." required>
+            <input type="text" id="deskripsi" placeholder="Masukkan deskripsi..." required>
+            <div class="form-buttons">
+                <button type="submit" class="btn-primary">Simpan</button>
+                <button type="button" id="cancelEdit" class="btn-secondary" style="display: none;">Batal</button>
+            </div>
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>Judul</th>
+                    <th>Deskripsi</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody id="listTable">
+                <!-- Data akan dimasukkan di sini -->
+            </tbody>
+        </table>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
