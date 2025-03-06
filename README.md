@@ -57,3 +57,11 @@ Dari halaman ini, Anda bisa menambah, mengedit, melihat, dan menghapus daftar tu
 - Jika terjadi error, periksa kembali konfigurasi `appsettings.json`
 - Dokumentasi API dapat langsung diakses melalui Postman setelah melakukan import
 
+## Dokumentasi API (Postman)
+Dokumentasi API dapat ditemukan di folder `postman/`.
+Untuk mengimpornya ke Postman:
+1. Buka Postman, klik **Import**.
+2. Pilih file `postman/ToDoList.postman_collection.json`.
+3. Klik **Import** untuk menambahkan ke Postman.
+
+
