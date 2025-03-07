@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "12389f48-558c-496d-8c17-04d55c39bae1",
 		"name": "ToDoList",
-		"description": "## 📖 Deskripsi\n\nProyek ini adalah aplikasi **Todo List** berbasis **.NET** yang menyediakan API untuk mengelola daftar tugas (CRUD). Selain itu, proyek ini juga memiliki antarmuka pengguna berbasis **HTML, CSS, dan jQuery**, yang memungkinkan pengguna berinteraksi langsung dengan sistem melalui tampilan web.  \n\n## ⚙️ Cara Setup\n\n### 1 **Clone Repository**\n\n```\ngit clone https://github.com/username/repository-name.git\n\n ```\n\n### 2 **Buka di Visual Studio**\n\n- Buka **Visual Studio**\n    \n- Pilih **Open a Project or Solution**, lalu arahkan ke folder proyek\n    \n\n### 3 **Atur Database (MySQL/SQL Server)**\n\n- Pastikan MySQL/SQL Server sudah terinstal\n    \n- Sesuaikan **connection string** di `appsettings.json`\n    \n\n### 4 **Jalankan Migrasi Database**\n\n```\ndotnet ef database update\n\n ```\n\n### 5 **Jalankan Aplikasi**\n\n- Klik tombol **Run** di Visual Studio atau jalankan perintah:\n    \n\n```\ndotnet run\n\n ```\n\n## 🚀Cara Menggunakan\n\n### 🔹 **Menggunakan API (Postman / HTTP Client)**\n\n1. **Buka Postman** dan import dokumentasi API yang tersedia\n    \n2. API endpoint akan otomatis tersedia di dokumentasi Postman\n    \n\n### 🔹 **Menggunakan UI (Web Browser)**\n\n1. Setelah program dijalankan, buka browser dan akses\n    \n\n```\nhttp://localhost:port/index.html\n\n\n ```\n\nDari halaman ini, Anda bisa menambah, mengedit, melihat, dan menghapus daftar tugas dengan mudah.\n\n## 📂 Struktur File\n\n```\n📦 TodoList\n ┣ 📂 Controllers        # Berisi API Controller (CRUD)\n ┣ 📂 Models            # Model data untuk database\n ┣ 📂 wwwroot           # Berisi tampilan UI dan aset statis\n ┃ ┣ 📂 views          # Halaman UI (index.html)\n ┃ ┣ 📂 css            # File CSS untuk styling\n ┃ ┣ 📂 js             # File JavaScript untuk logika frontend\n ┣ 📜 appsettings.json  # Konfigurasi database & aplikasi\n ┣ 📜 Program.cs        # Entry point aplikasi\n ┗ 📜 README.md         # Dokumentasi proyek\n\n\n ```\n\n## 📝 Catatan\n\n- Pastikan koneksi database sesuai dengan environment yang digunakan\n    \n- Jika terjadi error, periksa kembali konfigurasi `appsettings.json`\n    \n- Dokumentasi API dapat langsung diakses melalui **Postman** setelah melakukan import",
+		"description": "## 📖 Deskripsi\n\nProyek ini adalah aplikasi **Todo List** berbasis **.NET** yang menyediakan API untuk mengelola daftar tugas (CRUD). Selain itu, proyek ini juga memiliki antarmuka pengguna berbasis **HTML, CSS, dan jQuery**, yang memungkinkan pengguna berinteraksi langsung dengan sistem melalui tampilan web.\n\n## ⚙️ Cara Setup\n\n### 1 **Clone Repository**\n\n```\ngit clone https://github.com/username/repository-name.git\n\n ```\n\n### 2 **Buka di Visual Studio**\n\n- Buka **Visual Studio**\n    \n- Pilih **Open a Project or Solution**, lalu arahkan ke folder proyek\n    \n\n### 3 **Atur Database (MySQL/SQL Server)**\n\n- Pastikan MySQL/SQL Server sudah terinstal\n    \n- Sesuaikan **connection string** di `appsettings.json`\n    \n\n### 4 **Jalankan Migrasi Database**\n\n```\ndotnet ef database update\n\n ```\n\n### 5 **Jalankan Aplikasi**\n\n- Klik tombol **Run** di Visual Studio atau jalankan perintah:\n    \n\n```\ndotnet run\n\n ```\n\n## 🚀Cara Menggunakan\n\n### 🔹 **Menggunakan API (Postman / HTTP Client)**\n\n1. **Buka Postman** dan import dokumentasi API yang tersedia\n    \n2. API endpoint akan otomatis tersedia di dokumentasi Postman\n    \n\n### 🔹 **Menggunakan UI (Web Browser)**\n\n1. Setelah program dijalankan, buka browser dan akses\n    \n\n```\nhttp://localhost:7229/index.html\n\n ```\n\nDari halaman ini, Anda bisa menambah, mengedit, melihat, dan menghapus daftar tugas dengan mudah.\n\n## 📂 Struktur File\n\n```\n📦 TodoList\n ┣ 📂 Controllers        # Berisi API Controller (CRUD)\n ┣ 📂 Models            # Model data untuk database\n ┣ 📂 wwwroot           # Berisi tampilan UI dan aset statis\n ┃ ┣ 📂 views          # Halaman UI (index.html)\n ┃ ┣ 📂 css            # File CSS untuk styling\n ┃ ┣ 📂 js             # File JavaScript untuk logika frontend\n ┣ 📜 appsettings.json  # Konfigurasi database & aplikasi\n ┣ 📜 Program.cs        # Entry point aplikasi\n ┗ 📜 README.md         # Dokumentasi proyek\n\n ```\n\n## 📝 Catatan\n\n- Pastikan koneksi database sesuai dengan environment yang digunakan\n    \n- Jika terjadi error, periksa kembali konfigurasi `appsettings.json`\n    \n- Dokumentasi API dapat langsung diakses melalui **Postman** setelah melakukan import",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "42852439"
 	},
@@ -35,7 +35,59 @@
 				},
 				"description": "Endpoint ini digunakan untuk menambahkan data baru ke dalam daftar. Data yang dikirimkan dalam **body request** harus berupa JSON yang berisi **judul** dan **deskripsi**.\n\n**Catatan**:\n\n- Pastikan **judul** dan **deskripsi** tidak kosong agar tidak terjadi error validasi.\n    \n- Jika berhasil, API akan merespons dengan **201 Created** beserta data yang telah ditambahkan.\n    \n- Jika terjadi kesalahan dalam format data, API bisa merespons **400 Bad Request**."
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Succesfull Response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"judul\": \"Mengepel\",\r\n\"deskripsi\": \"Mengepel lantai kosan di hari sabtu\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7229/api/lists",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7229",
+							"path": [
+								"api",
+								"lists"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 07 Mar 2025 03:25:40 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"f75f939e-d546-4701-e9f9-08dd5d27bccc\",\n    \"judul\": \"Mengepel\",\n    \"deskripsi\": \"Mengepel lantai kosan di hari sabtu\"\n}"
+				}
+			]
 		},
 		{
 			"name": "Data List",
@@ -68,7 +120,59 @@
 				},
 				"description": "**Deskripsi**:  \nEndpoint ini digunakan untuk mengambil daftar seluruh data dalam sistem. Respon yang diterima berupa array JSON yang berisi **id**, **judul**, dan **deskripsi** dari setiap item dalam daftar.\n\n**Catatan:**\n\n- Pastikan server berjalan pada port yang sesuai (7299 dalam contoh ini).\n    \n- Jika data kosong, response bisa berupa array kosong `[]`.\n    \n- Jika API tidak merespons atau terjadi error **404 Not Found**, periksa apakah endpoint sudah benar."
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Succesful Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7229/api/lists",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7229",
+							"path": [
+								"api",
+								"lists"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 07 Mar 2025 03:15:00 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"3d8cefb1-95fb-4a19-8b51-08dd5ca2bce8\",\n        \"judul\": \"Ubah judul sebelumnya\",\n        \"deskripsi\": \"Ubah deskripsi sebelumnya\"\n    },\n    {\n        \"id\": \"22c89a02-01cc-4a43-1314-08dd5cac7152\",\n        \"judul\": \"Kerja Kelompok\",\n        \"deskripsi\": \"Mengerjakan tugas Interaksi Manusia dan Komputer bersama - sama\"\n    },\n    {\n        \"id\": \"316c59c6-a751-4487-1315-08dd5cac7152\",\n        \"judul\": \"Belajar\",\n        \"deskripsi\": \"Belajar bahasa jepang dijam 19.00\"\n    },\n    {\n        \"id\": \"a8d12421-e9fe-4651-0135-08dd5cb6941f\",\n        \"judul\": \"Kuliah\",\n        \"deskripsi\": \"Berangkat kuliah pada pukul 8.00 pagi\"\n    },\n    {\n        \"id\": \"3953b8e1-b30d-477d-af4e-37f61b681eba\",\n        \"judul\": \"Belanja Pokok\",\n        \"deskripsi\": \"Membeli kebutuhan pokok untuk bulan Maret\"\n    }\n]"
+				}
+			]
 		},
 		{
 			"name": "Update Task",
@@ -105,7 +209,124 @@
 				},
 				"description": "**Deskripsi**:  \nEndpoint ini digunakan untuk memperbarui data dalam daftar berdasarkan **id** yang diberikan. Data yang dikirimkan dalam **body request** harus berupa JSON yang berisi **judul** dan **deskripsi** yang diperbarui.\n\n**Catatan**:\n\n- Pastikan server berjalan pada port yang sesuai (7299 dalam contoh ini).\n    \n- Pastikan ID yang dikirim sudah benar dan data terkait memang ada dalam database. Jika tidak, API bisa merespons **404 Not Found**."
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Succesful Response",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"judul\": \"Mabar DOTA 2\",\r\n  \"deskripsi\": \"Main DOTA 2 bareng temen\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7229/api/lists/3d8cefb1-95fb-4a19-8b51-08dd5ca2bce8",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7229",
+							"path": [
+								"api",
+								"lists",
+								"3d8cefb1-95fb-4a19-8b51-08dd5ca2bce8"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 07 Mar 2025 03:22:11 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"3d8cefb1-95fb-4a19-8b51-08dd5ca2bce8\",\n    \"judul\": \"Mabar DOTA 2\",\n    \"deskripsi\": \"Main DOTA 2 bareng temen\"\n}"
+				},
+				{
+					"name": "ID Not Found",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"judul\": \"Ubah judul sebelumnya\",\r\n  \"deskripsi\": \"Ubah deskripsi sebelumnya\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7229/api/lists/3d8cefb1-95fb-4a19-8b51-08dd5ca2ab12",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7229",
+							"path": [
+								"api",
+								"lists",
+								"3d8cefb1-95fb-4a19-8b51-08dd5ca2ab12"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/problem+json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 07 Mar 2025 03:29:30 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"type\": \"https://tools.ietf.org/html/rfc9110#section-15.5.5\",\n    \"title\": \"Not Found\",\n    \"status\": 404,\n    \"traceId\": \"00-ae19c017e4853beb4ebff6157cda7a71-db80e78afa474973-00\"\n}"
+				}
+			]
 		},
 		{
 			"name": "Delete Task",
@@ -127,7 +348,86 @@
 				},
 				"description": "**Deskripsi:**  \nMenghapus data list berdasarkan `id`. Jika data ditemukan, maka akan dihapus dari database.\n\n**Catatan:**\n\n- **Pastikan** **`id`** **valid** sebelum mengirim request untuk menghindari error.\n    \n- Penghapusan bersifat **permanen**, jadi pastikan data yang dihapus benar-benar tidak diperlukan sebelum mengirim request.\n    \n- Respons yang dikembalikan adalah 204 No Content"
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Succesful Responses",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7229/api/lists/3d8cefb1-95fb-4a19-8b51-08dd5ca2bce8",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7229",
+							"path": [
+								"api",
+								"lists",
+								"3d8cefb1-95fb-4a19-8b51-08dd5ca2bce8"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 07 Mar 2025 03:26:25 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						}
+					],
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "ID Not Found",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7229/api/lists/3d8cefb1-95fb-4a19-8b51-08dd5ca2ab21",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7229",
+							"path": [
+								"api",
+								"lists",
+								"3d8cefb1-95fb-4a19-8b51-08dd5ca2ab21"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/problem+json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 07 Mar 2025 03:30:12 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"type\": \"https://tools.ietf.org/html/rfc9110#section-15.5.5\",\n    \"title\": \"Not Found\",\n    \"status\": 404,\n    \"traceId\": \"00-0275c7199619adb5c48c6092c2218e12-b12310de5188f630-00\"\n}"
+				}
+			]
 		}
 	]
 }
